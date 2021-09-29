@@ -1,10 +1,43 @@
 import React from 'react'
-import { AppContainer } from './components/AppContainer'
+import TelaCadastro from './components/paginaDeCadastro'
+import TelaDeServicos from './components/paginaDeServicos'
+import TelaHome from './components/paginaHome'
+import TelaCarrinho from './components/carrinhoDeCompras'
 
-function App() {
-	return (
-        <AppContainer />
-	)
+
+
+
+export default class App extends React.Component {
+
+	state = {
+		telaAtual:"TelaHome"
+	}
+
+	mudarTela = () => {
+		switch (this.state.telaAtual) {
+			case "TelaHome":
+				
+				break;
+		
+			default:
+				break;
+		}
+	}
+
+
+
+	render(){
+		return (
+			<div>
+				<TelaCadastro />
+				<TelaDeServicos />
+				<TelaHome />
+				<TelaCarrinho />
+
+			</div>
+			
+		)
+	}
 }
 
-export default App
+
