@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import Axios from 'axios';
-import {BASE_URL, headers} from "./constantes/urls"
+import {BASE_URL, headers} from "../constantes/urls"
 
 const DivCadastro = styled.div`
 border: black solid 2px;
