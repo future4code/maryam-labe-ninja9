@@ -1,7 +1,11 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import Axios from 'axios';
+<<<<<<< HEAD
 import {BASE_URL, headers} from "../constantes/urls"
+=======
+import { BASE_URL, headers } from './constantes/urls'
+>>>>>>> fd5223bd377f1b7351db46723d7d33a10de108aa
 
 const DivCadastro = styled.div`
 border: black solid 2px;
@@ -13,7 +17,7 @@ width: 40vw;
 height: 90vh;
 `
 
-export default class AppContainer extends Component {
+export default class PaginaCadastro extends Component {
   state = {
     titulo: "",
     descricao: "",
@@ -62,11 +66,9 @@ export default class AppContainer extends Component {
         prazo: ""
       })
       alert("Serviço adicionado com sucesso!")
-      console.log("deu certo", response.data)
     })
     .catch((error) => {
       alert(error.response.data)
-      console.log("deu errado", error.response.data)
     })
   }
 
