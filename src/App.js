@@ -1,7 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-import TelaCadastro from './components/paginaDeCadastro'
-import TelaDeServicos from './components/paginaDeServicos'
 import TelaHome from './components/paginaHome'
 import TelaCarrinho from './components/carrinhoDeCompras'
 import PaginaCadastro from './components/PaginaCadastro'
