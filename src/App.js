@@ -1,7 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-import TelaCadastro from './components/paginaDeCadastro'
-import TelaDeServicos from './components/paginaDeServicos'
 import TelaHome from './components/paginaHome'
 import TelaCarrinho from './components/carrinhoDeCompras'
 import PaginaCadastro from './components/PaginaCadastro'
@@ -21,18 +19,18 @@ const Home = styled.div`
 
 export default class App extends React.Component {
 	state = {
-		currentPage: 'PaginaCadastro',
-    telaAtual:"TelaHome"
+		currentPage: 'TelaHome',
+    	telaAtual:"TelaHome"
 	}
-  
-  escolheTela = () => {
+  	
+	escolheTela = () => {
 		switch (this.state.telaAtual) {
 			case "TelaHome":
 				return <TelaHome />;
 			case "TelaServicos":
-				return <TelaDeServicos />;
+				return <PaginaServicos />;
 			case "TelaCadastro":
-				return <TelaCadastro />;
+				return <PaginaCadastro />;
 			case "TelaCarrinho":
 				return <TelaCarrinho />;
 			default:
@@ -67,7 +65,7 @@ export default class App extends React.Component {
 				</Home>
 				<button onClick={() => this.changePage("PaginaServicos")}>Servicos</button>
 				<button onClick={() => this.changePage("PaginaCadastro")}>Cadastro</button>
-			  {renderCurrentPage()}
+			{renderCurrentPage()}
 			</div>
 		)
 	}
