@@ -4,7 +4,8 @@ import TelaCadastro from './components/paginaDeCadastro'
 import TelaDeServicos from './components/paginaDeServicos'
 import TelaHome from './components/paginaHome'
 import TelaCarrinho from './components/carrinhoDeCompras'
-
+import PaginaCadastro from './components/PaginaCadastro'
+import PaginaServicos from './components/PaginaServicos'
 
 
 const Home = styled.div`
@@ -18,14 +19,13 @@ const Home = styled.div`
 `;
 
 
-
 export default class App extends React.Component {
-
 	state = {
-		telaAtual:"TelaHome"
+		currentPage: 'PaginaCadastro',
+    telaAtual:"TelaHome"
 	}
-
-	escolheTela = () => {
+  
+  escolheTela = () => {
 		switch (this.state.telaAtual) {
 			case "TelaHome":
 				return <TelaHome />;
@@ -44,20 +44,32 @@ export default class App extends React.Component {
 		this.setState({telaAtual: nomeTela})
 	}
 
-	render(){
+	changePage = (currentPage) => {
+		this.setState({ currentPage: currentPage });
+	};
+
+	render() {
+		const renderCurrentPage = () => {
+			if (this.state.currentPage === "PaginaCadastro") {
+			return <PaginaCadastro />;
+			} else if (this.state.currentPage === "PaginaServicos") {
+			return <PaginaServicos />;
+			}
+		};
 		return (
 			<div>
-				<Home>
+        <Home>
 				{/* <button onClick={()=> this.mudaTela("TelaHome")}>Home</button>  */}
 				<button onClick={()=> this.mudaTela("TelaServicos")}>Contrate um LabeNinja</button>
 				<button onClick={()=> this.mudaTela("TelaCadastro")}>Seja um LabeNinja</button>
 				{/* <button onClick={()=> this.mudaTela("TelaCarrinho")}>Carrinho de compras</button> */}
 				{this.escolheTela()}
 				</Home>
+				<button onClick={() => this.changePage("PaginaServicos")}>Servicos</button>
+				<button onClick={() => this.changePage("PaginaCadastro")}>Cadastro</button>
+			  {renderCurrentPage()}
 			</div>
-			
 		)
 	}
 }
-
 
