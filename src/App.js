@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 import React from 'react'
 
 
@@ -11,6 +9,7 @@ import React from 'react'
 
 import PaginaCadastro from './components/PaginaCadastro'
 import PaginaServicos from './components/PaginaServicos'
+
 
 export default class App extends React.Component {
 	state = {
@@ -39,4 +38,4 @@ export default class App extends React.Component {
 	}
 }
 
->>>>>>> fd5223bd377f1b7351db46723d7d33a10de108aa
+
