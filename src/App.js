@@ -1,9 +1,70 @@
 import React from 'react'
+import TelaCarrinho from './components/ItensPasta/CarrinhoDeCompras'
+import Filtros from './components/Filtros/Filtros'
+import { PacoteServico } from './components/ItensPasta/PacoteServicos'
 import styled from 'styled-components'
 import TelaHome from './components/paginaHome'
-import TelaCarrinho from './components/carrinhoDeCompras'
+// import TelaCarrinho from './components/carrinhoDeCompras'
 import PaginaCadastro from './components/PaginaCadastro'
 import PaginaServicos from './components/PaginaServicos'
+
+
+// export default class App extends React.Component {
+
+// 	state = {
+// 		valorTotal: 550,
+// 		carrinho: [
+// 			{
+// 			id: 1,
+// 			nome: 'Serviço 1',
+// 			price: 123,
+			
+// 		},
+// 		{
+// 			id: 2,
+// 			nome: 'Serviço 2',
+// 			price: 321
+			
+// 		},
+// 		{
+// 			id: 3,
+// 			nome: 'Serviço 3',
+// 			price: 3321
+// 		}	
+// 		]		
+// 	}
+
+// 	adicionarItem = (item) => {
+// 		console.log(item)
+
+// 	}
+
+	
+// 	removerItem = (item) => {
+// 		console.log("serviço" , item)
+// 	}
+
+// 	render(){
+// 		return (
+
+// 			<div>
+				
+// 				<TelaCarrinho
+// 				carrinho ={this.state.carrinho}
+// 				valorTotal ={this.state.valorTotal}
+// 				removerItem={this.removerItem}
+// 				/>
+				
+// 			</div>
+			
+// 		)
+// 	}
+// }
+// import styled from 'styled-components'
+// import TelaHome from './components/paginaHome'
+// import TelaCarrinho from './components/carrinhoDeCompras'
+// import PaginaCadastro from './components/PaginaCadastro'
+// import PaginaServicos from './components/PaginaServicos'
 
 
 const Home = styled.div`
@@ -20,7 +81,37 @@ const Home = styled.div`
 export default class App extends React.Component {
 	state = {
 		currentPage: 'TelaHome',
-    	telaAtual:"TelaHome"
+    	telaAtual:"TelaHome",
+		valorTotal: 550,
+		carrinho: [
+			{
+			id: 1,
+			nome: 'Serviço 1',
+			price: 123,
+			
+		},
+		{
+			id: 2,
+			nome: 'Serviço 2',
+			price: 321
+			
+		},
+		{
+			id: 3,
+			nome: 'Serviço 3',
+			price: 3321
+		}	
+		]	
+	}
+
+	adicionarItem = (item) => {
+		console.log(item)
+
+	}
+
+	
+	removerItem = (item) => {
+		console.log("serviço" , item)
 	}
   	
 	escolheTela = () => {
@@ -32,7 +123,11 @@ export default class App extends React.Component {
 			case "TelaCadastro":
 				return <PaginaCadastro />;
 			case "TelaCarrinho":
-				return <TelaCarrinho />;
+				return <TelaCarrinho 
+				carrinho ={this.state.carrinho}
+				valorTotal ={this.state.valorTotal}
+				removerItem={this.removerItem}
+				/>;
 			default:
 				return <TelaHome />;
 		}
