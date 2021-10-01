@@ -1,5 +1,5 @@
 import React from 'react'
-import carrinho from '../img/outline_shopping_cart_black_24dp.png'
+import carrinho from '../img/shopping-cart.png'
 import styled from 'styled-components';
 import BotoesDeNavegacao from './botoesDeNavegacao';
 
@@ -34,6 +34,9 @@ const BarraDireita = styled.div`
     }
 `;
 
+const CartHeader = styled.img`
+    width: 40px;
+`
 
 
 export default class Header extends React.Component {
@@ -47,10 +50,12 @@ export default class Header extends React.Component {
                 {/* <button onClick={() => img src = {Logo} /> */}
             </BarraEsquerda>
             <BarraCentro>  
-                <BotoesDeNavegacao/>
+            <button onClick={() => this.props.changePage("paginaHome")}>Home</button>
+            <button onClick={() => this.props.changePage("paginaServicos")}>Servicos</button>
+            <button onClick={() => this.props.changePage("paginaCadastro")}>Cadastro</button>
             </BarraCentro>
             <BarraDireita>
-                <img src = {carrinho} />           
+                <CartHeader onClick={() => this.props.changePage("paginaCarrinho")} src = {carrinho} />           
             </BarraDireita>
         </BarraHeader>
         </Div>
