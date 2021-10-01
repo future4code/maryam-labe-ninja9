@@ -1,6 +1,6 @@
 import React from 'react'
 import TelaCarrinho from './components/ItensPasta/CarrinhoDeCompras'
-import Filtros from './components/Filtros/filtros'
+import Filtros from './components/Filtros'
 import { PacoteServico } from './components/ItensPasta/PacoteServicos'
 import styled from 'styled-components'
 import TelaHome from './components/paginaHome'
@@ -115,18 +115,12 @@ export default class App extends React.Component {
 	}
   	
 	render() {
-		const renderCurrentPage = () => {
-			if (this.state.currentPage === "PaginaCadastro") {
-			return <PaginaCadastro />;
-			} else if (this.state.currentPage === "PaginaServicos") {
-			return <PaginaServicos />;
-			}
-		};
+		
 		return (
 			<div>
 				<Header />
 				<TelaHome/>
-				<Footer/>
+				<Footer/>				
 			</div>
 		
 		
