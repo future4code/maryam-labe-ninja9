@@ -1,6 +1,6 @@
 import React from 'react'
 import TelaCarrinho from './components/ItensPasta/CarrinhoDeCompras'
-import Filtros from './components/Filtros/filtros'
+import Filtros from './components/Filtros/Filtros'
 import { PacoteServico } from './components/ItensPasta/PacoteServicos'
 import styled from 'styled-components'
 import TelaHome from './components/paginaHome'
@@ -85,6 +85,7 @@ export default class App extends React.Component {
 		currentPage: 'TelaHome',
     	telaAtual:"TelaHome",
 		valorTotal: 550,
+		detalhesServicosId: "",
 		carrinho: [
 			{
 			id: 1,
@@ -108,23 +109,29 @@ export default class App extends React.Component {
 
 	adicionarItem = (item) => {
 		console.log(item)
-
 	}
 
 	
 	removerItem = (item) => {
 		console.log("serviço" , item)
 	}
-  	
+
+	paginaDetalhes = (servicoId) => {
+		this.setState({detalhesServicosId: servicoId, telaAtual: "DetalhesServicos"})
+	}
+
 	escolheTela = () => {
 		switch (this.state.telaAtual) {
 			case "TelaHome":
 				return <TelaHome />;
 			case "TelaServicos":
-				return <PaginaServicos />;
+				return <PaginaServicos 
+				paginaDetalhes={this.paginaDetalhes}
+				/>;
 			case "DetalhesServicos":
 				return <DetalhesServicos 
 				mudaTela={this.mudaTela}
+				servicoId={this.state.detalhesServicosId}
 				/>;
 			case "TelaCadastro":
 				return <PaginaCadastro />;
@@ -162,7 +169,6 @@ export default class App extends React.Component {
 				<button onClick={()=> this.mudaTela("TelaServicos")}>Contrate um LabeNinja</button>
 				<button onClick={()=> this.mudaTela("TelaCadastro")}>Seja um LabeNinja</button>
 				{/* <button onClick={()=> this.mudaTela("TelaCarrinho")}>Carrinho de compras</button> */}
-				<button onClick={()=> this.mudaTela("DetalhesServicos")}>Jobs detalhes</button>
 				{this.escolheTela()}
 				</Home>
 				<button onClick={() => this.changePage("PaginaServicos")}>Servicos</button>
