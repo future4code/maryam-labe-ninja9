@@ -86,7 +86,7 @@ const CardServicos = (props) => {
             <PrecoCards>R${props.preco}</PrecoCards>
             {dataFormatada}
             <button onClick={()=> props.paginaDetalhes(props.id)}>Ver detalhes</button>
-            <button>Carrinho</button>
+            <button onClick={() => this.adicionarNoCarrinho()}>Carrinho</button>
 
             </ContainerCards>
     )

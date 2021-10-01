@@ -3,7 +3,7 @@ import carrinho from '../img/shopping-cart.png'
 import styled from 'styled-components';
 import BotoesDeNavegacao from './botoesDeNavegacao';
 import Logo from '../img/labeninjas3.png'
-import TelaHome from './paginaHome'
+import TelaHome from './PaginaHome'
 
 
 
@@ -60,8 +60,7 @@ export default class Header extends React.Component {
 
                 <CartHeader onClick={() => this.props.changePage("paginaCarrinho")} src = {carrinho} />           
 
-            <button onClick={()=> TelaHome}> <img src = {carrinho}></img></button>           
-
+          
             </BarraDireita>
         </BarraHeader>
         </Div>

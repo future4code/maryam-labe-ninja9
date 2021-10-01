@@ -13,12 +13,11 @@ padding: 10px;
 export default class TelaCarrinho extends React.Component {
 
 	render(){
-		const ItensDoCarrinho = this.props.carrinho && this.props.carrinho.map(item => {
+		const ItensDoCarrinho = this.props.carrinho && this.props.carrinho.map(job => {
 			return <Itens 
-			  quantidade={item.quantidade}
-			  nome={item.nome}
-			  onClick={() => console.log("adicionar serviço")}
-			  onClick={() => this.props.removerItem(item)}			  
+			  quantidade={job.quantidade}
+			  nome={job.nome}
+			  onClick={() => this.props.removerItem(job)}			  
 			/>
 		})
 		return (

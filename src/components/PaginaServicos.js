@@ -22,13 +22,22 @@ export default class PaginaServicos extends React.Component {
 		minPrice: '',
 		maxPrice: '',
 		sortingParameter: 'title',
-		order: 1
+		order: 1,
+		carrinho:[]
 	}
 
 	componentDidMount = () => {
 		this.getAllJobs()
 	}
 
+	adicionarNoCarrinho = (job) => {
+		const novoCarrinho = {...this.state.carrinho, job}
+		this.setState({
+			carrinho: novoCarrinho
+		})
+		alert(`O Serviço ${job.title} foi adicionado ao carrinho`)
+	}
+	
 	getAllJobs = () => {
 		axios.get(`${BASE_URL}/jobs`, headers)
 		.then((res) => {
@@ -93,6 +102,9 @@ export default class PaginaServicos extends React.Component {
 					preco={servico.price}
 					prazo={servico.dueDate}
 					paginaDetalhes={this.props.paginaDetalhes}
+					onClick ={this.props.adicionarNoCarrinho}
+				
+
 				/>
 		})
 		return (

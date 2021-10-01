@@ -38,22 +38,3 @@ export default class Footer extends React.Component {
 		)
 	}
 }
-
-            
-            <FooterClass>
-            <TextFooter>
-               Somos uma plataforma online para conectar clientes a prestadores de serviços por todo país.
-            </TextFooter>
-
-            
-            <TextFooter> Labeninjas Copyright© </TextFooter>
-            <TextFooter> - Desenvolvido por: <TextFooter/> 
-            Enzo Emiliano, Élida Nunes, Júlia Cortez, Mariana Trevisane e Rafael Flores -  </TextFooter>
-            
-        </FooterClass>
-		
-		)
-	}
-}
-
-
