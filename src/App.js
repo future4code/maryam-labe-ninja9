@@ -1,13 +1,14 @@
 import React from 'react'
 import TelaCarrinho from './components/ItensPasta/CarrinhoDeCompras'
-import Filtros from './components/Filtros/Filtros'
+import Filtros from './components/Filtros/filtros'
 import { PacoteServico } from './components/ItensPasta/PacoteServicos'
 import styled from 'styled-components'
 import TelaHome from './components/paginaHome'
 // import TelaCarrinho from './components/carrinhoDeCompras'
 import PaginaCadastro from './components/PaginaCadastro'
 import PaginaServicos from './components/PaginaServicos'
-
+import Footer from './footer'
+import PagFinal from './paginaFinal'
 
 // export default class App extends React.Component {
 
@@ -160,7 +161,12 @@ export default class App extends React.Component {
 				</Home>
 				<button onClick={() => this.changePage("PaginaServicos")}>Servicos</button>
 				<button onClick={() => this.changePage("PaginaCadastro")}>Cadastro</button>
+				
+				
+			
 			{renderCurrentPage()}
+				<PagFinal></PagFinal>
+				<Footer></Footer>
 			</div>
 		)
 	}
