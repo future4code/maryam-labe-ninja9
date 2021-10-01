@@ -2,6 +2,8 @@ import React from 'react'
 import carrinho from '../img/shopping-cart.png'
 import styled from 'styled-components';
 import BotoesDeNavegacao from './botoesDeNavegacao';
+import Logo from '../img/labeninjas3.png'
+import TelaHome from './paginaHome'
 
 
 
@@ -47,7 +49,7 @@ export default class Header extends React.Component {
         <Div>
         <BarraHeader>
             <BarraEsquerda>
-                {/* <button onClick={() => img src = {Logo} /> */}
+            <button onClick={()=> TelaHome}> <img src = {Logo} ></img></button>
             </BarraEsquerda>
             <BarraCentro>  
             <button onClick={() => this.props.changePage("paginaHome")}>Home</button>
@@ -55,7 +57,11 @@ export default class Header extends React.Component {
             <button onClick={() => this.props.changePage("paginaCadastro")}>Cadastro</button>
             </BarraCentro>
             <BarraDireita>
+
                 <CartHeader onClick={() => this.props.changePage("paginaCarrinho")} src = {carrinho} />           
+
+            <button onClick={()=> TelaHome}> <img src = {carrinho}></img></button>           
+
             </BarraDireita>
         </BarraHeader>
         </Div>

@@ -86,10 +86,13 @@ export default class PaginaServicos extends React.Component {
 		})
 		.map((servico) => {
 			return <CardServicos
+					key={servico.id}
+					id={servico.id}
 					titulo={servico.title}
 					descricao={servico.description}
 					preco={servico.price}
 					prazo={servico.dueDate}
+					paginaDetalhes={this.props.paginaDetalhes}
 				/>
 		})
 		return (

@@ -71,6 +71,7 @@ const CardServicos = (props) => {
     return (
         <ContainerCards>
             <TituloCards>{props.titulo}</TituloCards>
+
             <DescriptionJob>{props.descricao}</DescriptionJob>
             <LineName />
             <ContainerPriceDate>
@@ -81,6 +82,12 @@ const CardServicos = (props) => {
                 <ButtonDetails>Ver detalhes</ButtonDetails>
                 <ButtonCart src = {carrinho} /> 
             </ContainerDetailsCart>
+
+            <PrecoCards>R${props.preco}</PrecoCards>
+            {dataFormatada}
+            <button onClick={()=> props.paginaDetalhes(props.id)}>Ver detalhes</button>
+            <button>Carrinho</button>
+
             </ContainerCards>
     )
 }
