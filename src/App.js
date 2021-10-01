@@ -1,12 +1,13 @@
 import React from 'react'
 import TelaCarrinho from './components/ItensPasta/CarrinhoDeCompras'
-import Filtros from './components/Filtros/Filtros'
+import Filtros from './components/Filtros/filtros'
 import { PacoteServico } from './components/ItensPasta/PacoteServicos'
 import styled from 'styled-components'
 import TelaHome from './components/paginaHome'
 // import TelaCarrinho from './components/carrinhoDeCompras'
 import PaginaCadastro from './components/PaginaCadastro'
 import PaginaServicos from './components/PaginaServicos'
+import DetalhesServicos from './components/DetalhesServicos'
 
 
 // export default class App extends React.Component {
@@ -120,6 +121,10 @@ export default class App extends React.Component {
 				return <TelaHome />;
 			case "TelaServicos":
 				return <PaginaServicos />;
+			case "DetalhesServicos":
+				return <DetalhesServicos 
+				mudaTela={this.mudaTela}
+				/>;
 			case "TelaCadastro":
 				return <PaginaCadastro />;
 			case "TelaCarrinho":
@@ -156,6 +161,7 @@ export default class App extends React.Component {
 				<button onClick={()=> this.mudaTela("TelaServicos")}>Contrate um LabeNinja</button>
 				<button onClick={()=> this.mudaTela("TelaCadastro")}>Seja um LabeNinja</button>
 				{/* <button onClick={()=> this.mudaTela("TelaCarrinho")}>Carrinho de compras</button> */}
+				<button onClick={()=> this.mudaTela("DetalhesServicos")}>Jobs detalhes</button>
 				{this.escolheTela()}
 				</Home>
 				<button onClick={() => this.changePage("PaginaServicos")}>Servicos</button>
