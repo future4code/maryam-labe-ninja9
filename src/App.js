@@ -1,7 +1,5 @@
 import React from 'react'
 import TelaCarrinho from './components/ItensPasta/CarrinhoDeCompras'
-import Filtros from './components/Filtros/filtros'
-import { PacoteServico } from './components/ItensPasta/PacoteServicos'
 import styled from 'styled-components'
 import TelaHome from './components/paginaHome'
 import Header from './components/Header'
@@ -124,6 +122,17 @@ export default class App extends React.Component {
 		};
 		return (
 			<div>
+
+        <Home>
+				{/* <button onClick={()=> this.mudaTela("TelaHome")}>Home</button>  */}
+				<button onClick={()=> this.mudaTela("TelaServicos")}>Contrate um LabeNinja</button>
+				<button onClick={()=> this.mudaTela("TelaCadastro")}>Seja um LabeNinja</button>
+				{/* <button onClick={()=> this.mudaTela("TelaCarrinho")}>Carrinho de compras</button> */}
+				{this.escolheTela()}
+				</Home>
+			{renderCurrentPage()}
+
+			<Footer></Footer>
 				<Header />
 				<TelaHome/>
 				<Footer/>
