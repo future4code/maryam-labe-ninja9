@@ -10,21 +10,21 @@ import DetalhesServicos from './components/DetalhesServicos'
 import Footer from './footer'
 
 
-const Home = styled.div`
-    padding: 5px 15px;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    margin: 0 auto;
-    color: black;
-`;
+// const Home = styled.div`
+//     padding: 5px 15px;
+//     width: 100%;
+//     display: flex;
+//     align-items: center;
+//     margin: 0 auto;
+//     color: black;
+// `;
 
 
 export default class App extends React.Component {
 	state = {
 		currentPage: "paginaHome",
 		valorTotal: 550,
-		detalhesServicosId: "",
+		servicosId: '',
 		carrinho: [
 			{
 			id: 1,
@@ -54,29 +54,38 @@ export default class App extends React.Component {
 		console.log("serviço" , item)
 	}
 
-	changePage = (currentPage) => {
-		this.setState({ currentPage: currentPage });
+	changePage = (currentPage, servicosId) => {
+		this.setState({ 
+			currentPage: currentPage,
+			servicosId: servicosId
+		});
 	}
 
 	condicionalPaginas = () => {
 		switch (this.state.currentPage) {
-		  case "paginaHome":
-			return <PaginaHome changePage={this.changePage} />;
-		  case "paginaServicos":
-			return <PaginaServicos changePage={this.changePage} />;
-		  case "paginaCadastro":
-			return <PaginaCadastro changePage={this.changePage} />;
+			case "paginaHome":
+				return <PaginaHome changePage={this.changePage} />;
+			case "paginaServicos":
+				return <PaginaServicos 
+				changePage={this.changePage} />;
+			case "paginaCadastro":
+				return <PaginaCadastro changePage={this.changePage} />;
 			case "paginaCarrinho":
 				return <TelaCarrinho changePage={this.changePage} />
 			case "paginaDetalhes":
-				return <DetalhesServicos changePage={this.changePage} />
-		  default:
-			return <PaginaHome />;
+				return <DetalhesServicos 
+				changePage={this.changePage} />
+			default:
+			return <DetalhesServicos />;
 		}
-	  };
+};
+
+	paginaDetalhes = (servicoId) => {
+		this.setState({detalhesServicosId: servicoId, currentPage: "paginaDetalhes"})
+	}
 
 	render() {
-	
+	console.log(this.state.servicosId)
 
 		return (
 			<div>
@@ -85,12 +94,6 @@ export default class App extends React.Component {
 				/>
 				{this.condicionalPaginas()}
 				<Footer/>
-
-	{/* paginaDetalhes = (servicoId) => {
-		this.setState({detalhesServicosId: servicoId, telaAtual: "DetalhesServicos"})
-	} */}
-
-		
 
 			</div>
 		)

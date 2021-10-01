@@ -4,6 +4,7 @@ import axios from 'axios'
 import CardServicos from './CardDeServicos'
 import Filtros from './Filtros'
 import styled from 'styled-components'
+import DetalhesServicos from './DetalhesServicos'
 
 const ContainerServicos = styled.div`
 	display: grid;
@@ -22,7 +23,9 @@ export default class PaginaServicos extends React.Component {
 		minPrice: '',
 		maxPrice: '',
 		sortingParameter: 'title',
-		order: 1
+		order: 1,
+		currentPage: 'paginaServicos',
+		jobId: ''
 	}
 
 	componentDidMount = () => {
@@ -37,6 +40,11 @@ export default class PaginaServicos extends React.Component {
 			console.log(err)
 		})
 	}
+
+	// currentPage = (currentPage, jobId) => {
+	// 	this.setState({currentPage: currentPage,
+	// 	jobId: jobId})
+	// }
 
 	updateQuery = (ev) => {
 		this.setState({query: ev.target.value})
@@ -63,6 +71,18 @@ export default class PaginaServicos extends React.Component {
 	}
 
 	render() {
+
+		// const renderCurrentPage = () => {
+		// 	if (this.state.currentPage === 'paginaServicos') {
+		// 		return <PaginaServicos 
+		// 		changePage={this.currentPage}/>
+		// 	} else if (this.state.currentPage === 'paginaDetalhes')
+		// 		return <DetalhesServicos
+		// 		changePage={this.currentPage} 
+		// 		/>
+		// }
+
+
 		const servicos = this.state.jobs
 		.filter((job) => {
 			return job.title.toLowerCase().includes(this.state.query.toLowerCase()) ||
@@ -92,7 +112,7 @@ export default class PaginaServicos extends React.Component {
 					descricao={servico.description}
 					preco={servico.price}
 					prazo={servico.dueDate}
-					paginaDetalhes={this.props.paginaDetalhes}
+					changePage={this.props.changePage}
 				/>
 		})
 		return (
@@ -111,6 +131,7 @@ export default class PaginaServicos extends React.Component {
 					clearFilter={this.clearFilter}
 				/>
 				Ninjas disponíveis: {servicos.length}
+
 				<ContainerServicos>
 				{servicos}
 				</ContainerServicos>

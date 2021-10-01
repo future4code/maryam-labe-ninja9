@@ -71,18 +71,19 @@ const CardServicos = (props) => {
     return (
         <ContainerCards>
             <TituloCards>{props.titulo}</TituloCards>
-
             <DescriptionJob>{props.descricao}</DescriptionJob>
             <LineName />
             <ContainerPriceDate>
                 <PrecoCards>R${props.preco}</PrecoCards>
                 <DueDateCards>{dataFormatada}</DueDateCards>
             </ContainerPriceDate>
+            {props.id}
             <ContainerDetailsCart>
-                <ButtonDetails onClick={()=> props.paginaDetalhes(props.id)}>Ver detalhes</ButtonDetails>
-                <ButtonCart src = {carrinho} /> 
+                <ButtonDetails onClick={() => props.changePage("paginaDetalhes", props.servicosId)}>Ver detalhes
+                </ButtonDetails>
+                <ButtonCart onClick={() => props.changePage("paginaCarrinho")} src = {carrinho} /> 
             </ContainerDetailsCart>
-
+            
             </ContainerCards>
     )
 }

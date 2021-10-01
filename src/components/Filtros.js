@@ -31,7 +31,7 @@ export function Filtros (props){
 					/>
 
 					<span>
-						<label for='sort'>Ordenação</label>
+						<label HtmlFor='sort'>Ordenação</label>
 
 						<select 
 						name='sort'

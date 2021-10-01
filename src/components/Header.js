@@ -49,10 +49,9 @@ export default class Header extends React.Component {
         <Div>
         <BarraHeader>
             <BarraEsquerda>
-            <button onClick={()=> TelaHome}> <img src = {Logo} ></img></button>
+            <button  onClick={() => this.props.changePage("paginaHome")}> <img src = {Logo} ></img></button>
             </BarraEsquerda>
             <BarraCentro>  
-            <button onClick={() => this.props.changePage("paginaHome")}>Home</button>
             <button onClick={() => this.props.changePage("paginaServicos")}>Servicos</button>
             <button onClick={() => this.props.changePage("paginaCadastro")}>Cadastro</button>
             </BarraCentro>
