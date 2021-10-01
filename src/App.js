@@ -78,6 +78,7 @@ const Home = styled.div`
 `;
 
 
+
 export default class App extends React.Component {
 	state = {
 		currentPage: 'TelaHome',
@@ -169,4 +170,5 @@ export default class App extends React.Component {
 		)
 	}
 }
+
 
