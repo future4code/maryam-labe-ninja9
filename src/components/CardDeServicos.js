@@ -5,6 +5,7 @@ const ContainerCards = styled.div`
     display: flex;
     flex-direction: column;
     border: 1px solid black;
+    border-radius: 4px;
     width: 250px;
     padding: 8px;
     font-family: Arial;

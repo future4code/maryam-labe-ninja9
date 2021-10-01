@@ -1,7 +1,5 @@
 import React from 'react'
 import TelaCarrinho from './components/ItensPasta/CarrinhoDeCompras'
-import Filtros from './components/Filtros/filtros'
-import { PacoteServico } from './components/ItensPasta/PacoteServicos'
 import styled from 'styled-components'
 import TelaHome from './components/paginaHome'
 // import TelaCarrinho from './components/carrinhoDeCompras'
@@ -159,8 +157,6 @@ export default class App extends React.Component {
 				{/* <button onClick={()=> this.mudaTela("TelaCarrinho")}>Carrinho de compras</button> */}
 				{this.escolheTela()}
 				</Home>
-				<button onClick={() => this.changePage("PaginaServicos")}>Servicos</button>
-				<button onClick={() => this.changePage("PaginaCadastro")}>Cadastro</button>
 			{renderCurrentPage()}
 
 			<Footer></Footer>
