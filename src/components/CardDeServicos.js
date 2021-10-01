@@ -79,7 +79,7 @@ const CardServicos = (props) => {
                 <DueDateCards>{dataFormatada}</DueDateCards>
             </ContainerPriceDate>
             <ContainerDetailsCart>
-                <ButtonDetails>Ver detalhes</ButtonDetails>
+                <ButtonDetails >Ver detalhes</ButtonDetails>
                 <ButtonCart src = {carrinho} /> 
             </ContainerDetailsCart>
 

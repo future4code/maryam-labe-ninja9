@@ -58,9 +58,7 @@ export default class Header extends React.Component {
             </BarraCentro>
             <BarraDireita>
 
-                <CartHeader onClick={() => this.props.changePage("paginaCarrinho")} src = {carrinho} />           
-
-            <button onClick={()=> TelaHome}> <img src = {carrinho}></img></button>           
+            <CartHeader onClick={() => this.props.changePage("paginaCarrinho")} src = {carrinho} />                    
 
             </BarraDireita>
         </BarraHeader>
