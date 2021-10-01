@@ -2,10 +2,11 @@ import React from 'react'
 import TelaCarrinho from './components/ItensPasta/CarrinhoDeCompras'
 import styled from 'styled-components'
 import TelaHome from './components/paginaHome'
-// import TelaCarrinho from './components/carrinhoDeCompras'
+import Header from './components/Header'
 import PaginaCadastro from './components/PaginaCadastro'
 import PaginaServicos from './components/PaginaServicos'
 import Footer from './footer'
+
 
 // export default class App extends React.Component {
 
@@ -65,22 +66,20 @@ import Footer from './footer'
 // import PaginaServicos from './components/PaginaServicos'
 
 
-const Home = styled.div`
-    max-width: 1010px;
-    padding: 5px 15px;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    margin: 0 auto;
-    color: black;
-`;
+// const Home = styled.div`
+//     max-width: 1010px;
+//     padding: 5px 15px;
+//     width: 100%;
+//     display: flex;
+//     align-items: center;
+//     margin: 0 auto;
+//     color: black;
+// `;
 
 
 
 export default class App extends React.Component {
 	state = {
-		currentPage: 'TelaHome',
-    	telaAtual:"TelaHome",
 		valorTotal: 550,
 		carrinho: [
 			{
@@ -113,33 +112,6 @@ export default class App extends React.Component {
 		console.log("serviço" , item)
 	}
   	
-	escolheTela = () => {
-		switch (this.state.telaAtual) {
-			case "TelaHome":
-				return <TelaHome />;
-			case "TelaServicos":
-				return <PaginaServicos />;
-			case "TelaCadastro":
-				return <PaginaCadastro />;
-			case "TelaCarrinho":
-				return <TelaCarrinho 
-				carrinho ={this.state.carrinho}
-				valorTotal ={this.state.valorTotal}
-				removerItem={this.removerItem}
-				/>;
-			default:
-				return <TelaHome />;
-		}
-	}
-
-	mudaTela = (nomeTela) =>{
-		this.setState({telaAtual: nomeTela})
-	}
-
-	changePage = (currentPage) => {
-		this.setState({ currentPage: currentPage });
-	};
-
 	render() {
 		const renderCurrentPage = () => {
 			if (this.state.currentPage === "PaginaCadastro") {
@@ -150,6 +122,7 @@ export default class App extends React.Component {
 		};
 		return (
 			<div>
+
         <Home>
 				{/* <button onClick={()=> this.mudaTela("TelaHome")}>Home</button>  */}
 				<button onClick={()=> this.mudaTela("TelaServicos")}>Contrate um LabeNinja</button>
@@ -160,6 +133,9 @@ export default class App extends React.Component {
 			{renderCurrentPage()}
 
 			<Footer></Footer>
+				<Header />
+				<TelaHome/>
+				<Footer/>
 			</div>
 		
 		
