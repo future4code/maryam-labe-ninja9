@@ -8,7 +8,7 @@ import TelaHome from './components/paginaHome'
 import PaginaCadastro from './components/PaginaCadastro'
 import PaginaServicos from './components/PaginaServicos'
 import DetalhesServicos from './components/DetalhesServicos'
-
+import Footer from './footer'
 
 // export default class App extends React.Component {
 
@@ -77,6 +77,7 @@ const Home = styled.div`
     margin: 0 auto;
     color: black;
 `;
+
 
 
 export default class App extends React.Component {
@@ -167,8 +168,13 @@ export default class App extends React.Component {
 				<button onClick={() => this.changePage("PaginaServicos")}>Servicos</button>
 				<button onClick={() => this.changePage("PaginaCadastro")}>Cadastro</button>
 			{renderCurrentPage()}
+
+			<Footer></Footer>
 			</div>
+		
+		
 		)
 	}
 }
+
 
