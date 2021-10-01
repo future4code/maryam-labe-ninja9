@@ -79,14 +79,9 @@ const CardServicos = (props) => {
                 <DueDateCards>{dataFormatada}</DueDateCards>
             </ContainerPriceDate>
             <ContainerDetailsCart>
-                <ButtonDetails >Ver detalhes</ButtonDetails>
+                <ButtonDetails onClick={()=> props.paginaDetalhes(props.id)}>Ver detalhes</ButtonDetails>
                 <ButtonCart src = {carrinho} /> 
             </ContainerDetailsCart>
-
-            <PrecoCards>R${props.preco}</PrecoCards>
-            {dataFormatada}
-            <button onClick={()=> props.paginaDetalhes(props.id)}>Ver detalhes</button>
-            <button>Carrinho</button>
 
             </ContainerCards>
     )
