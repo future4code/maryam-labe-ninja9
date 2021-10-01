@@ -7,12 +7,11 @@ import styled from 'styled-components'
 
 const ContainerServicos = styled.div`
 	display: grid;
-	width: 100vw;
+	width: 100%;
 	grid-template-columns: 1fr 1fr 1fr 1fr;
 	align-itens: center;
 	columns-gap: 10px;
 	row-gap: 10px;
-	margin: 10px;
 `
 
 export default class PaginaServicos extends React.Component {
@@ -90,6 +89,7 @@ export default class PaginaServicos extends React.Component {
 					key={servico.id}
 					id={servico.id}
 					titulo={servico.title}
+					descricao={servico.description}
 					preco={servico.price}
 					prazo={servico.dueDate}
 					paginaDetalhes={this.props.paginaDetalhes}
@@ -110,6 +110,7 @@ export default class PaginaServicos extends React.Component {
 					updateOrder={this.updateOrder}
 					clearFilter={this.clearFilter}
 				/>
+				Ninjas disponíveis: {servicos.length}
 				<ContainerServicos>
 				{servicos}
 				</ContainerServicos>
