@@ -32,7 +32,7 @@ const CardServicos = (props) => {
             <TituloCards>{props.titulo}</TituloCards>
             <PrecoCards>R${props.preco}</PrecoCards>
             {dataFormatada}
-            <button>Ver detalhes</button>
+            <button onClick={()=> props.paginaDetalhes(props.id)}>Ver detalhes</button>
             <button>Carrinho</button>
             </ContainerCards>
     )
