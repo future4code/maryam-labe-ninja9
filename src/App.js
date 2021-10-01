@@ -1,14 +1,24 @@
 import React from 'react'
 import TelaCarrinho from './components/ItensPasta/CarrinhoDeCompras'
+
 import Filtros from './components/Filtros/filtros'
+
+import Filtros from './components/Filtros'
+
 import { PacoteServico } from './components/ItensPasta/PacoteServicos'
 import styled from 'styled-components'
-import TelaHome from './components/paginaHome'
-// import TelaCarrinho from './components/carrinhoDeCompras'
+import PaginaHome from './components/PaginaHome'
+import Header from './components/Header'
 import PaginaCadastro from './components/PaginaCadastro'
 import PaginaServicos from './components/PaginaServicos'
+
 import Footer from './footer'
 import PagFinal from './paginaFinal'
+
+import DetalhesServicos from './components/DetalhesServicos'
+import Footer from './footer'
+
+
 
 // export default class App extends React.Component {
 
@@ -69,7 +79,6 @@ import PagFinal from './paginaFinal'
 
 
 const Home = styled.div`
-    max-width: 1010px;
     padding: 5px 15px;
     width: 100%;
     display: flex;
@@ -79,11 +88,12 @@ const Home = styled.div`
 `;
 
 
+
 export default class App extends React.Component {
 	state = {
-		currentPage: 'TelaHome',
-    	telaAtual:"TelaHome",
+		currentPage: "paginaHome",
 		valorTotal: 550,
+		detalhesServicosId: "",
 		carrinho: [
 			{
 			id: 1,
@@ -107,20 +117,59 @@ export default class App extends React.Component {
 
 	adicionarItem = (item) => {
 		console.log(item)
-
 	}
 
-	
 	removerItem = (item) => {
 		console.log("serviço" , item)
 	}
-  	
+
+	changePage = (currentPage) => {
+		this.setState({ currentPage: currentPage });
+	}
+
+	condicionalPaginas = () => {
+		switch (this.state.currentPage) {
+		  case "paginaHome":
+			return <PaginaHome changePage={this.changePage} />;
+		  case "paginaServicos":
+			return <PaginaServicos changePage={this.changePage} />;
+		  case "paginaCadastro":
+			return <PaginaCadastro changePage={this.changePage} />;
+			case "paginaCarrinho":
+				return <TelaCarrinho changePage={this.changePage} />
+		  default:
+			return <PaginaHome />;
+		}
+	  };
+
+	render() {
+	
+
+		return (
+			<div>
+				<Header 
+				changePage={this.changePage}
+				/>
+        			{this.condicionalPaginas()}
+				<Footer/>
+
+	paginaDetalhes = (servicoId) => {
+		this.setState({detalhesServicosId: servicoId, telaAtual: "DetalhesServicos"})
+	}
+
 	escolheTela = () => {
 		switch (this.state.telaAtual) {
 			case "TelaHome":
 				return <TelaHome />;
 			case "TelaServicos":
-				return <PaginaServicos />;
+				return <PaginaServicos 
+				paginaDetalhes={this.paginaDetalhes}
+				/>;
+			case "DetalhesServicos":
+				return <DetalhesServicos 
+				mudaTela={this.mudaTela}
+				servicoId={this.state.detalhesServicosId}
+				/>;
 			case "TelaCadastro":
 				return <PaginaCadastro />;
 			case "TelaCarrinho":
@@ -143,15 +192,10 @@ export default class App extends React.Component {
 	};
 
 	render() {
-		const renderCurrentPage = () => {
-			if (this.state.currentPage === "PaginaCadastro") {
-			return <PaginaCadastro />;
-			} else if (this.state.currentPage === "PaginaServicos") {
-			return <PaginaServicos />;
-			}
-		};
+		
 		return (
 			<div>
+
         <Home>
 				{/* <button onClick={()=> this.mudaTela("TelaHome")}>Home</button>  */}
 				<button onClick={()=> this.mudaTela("TelaServicos")}>Contrate um LabeNinja</button>
@@ -159,6 +203,7 @@ export default class App extends React.Component {
 				{/* <button onClick={()=> this.mudaTela("TelaCarrinho")}>Carrinho de compras</button> */}
 				{this.escolheTela()}
 				</Home>
+
 				<button onClick={() => this.changePage("PaginaServicos")}>Servicos</button>
 				<button onClick={() => this.changePage("PaginaCadastro")}>Cadastro</button>
 				
@@ -167,8 +212,17 @@ export default class App extends React.Component {
 			{renderCurrentPage()}
 				<PagFinal></PagFinal>
 				<Footer></Footer>
+
+			{renderCurrentPage()}
+
+			<Footer></Footer>
+				<Header />
+				<TelaHome/>
+				<Footer/>				
+
 			</div>
 		)
 	}
 }
+
 
