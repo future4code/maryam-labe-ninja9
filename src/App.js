@@ -1,14 +1,23 @@
 import React from 'react'
 import TelaCarrinho from './components/ItensPasta/CarrinhoDeCompras'
+
+import Filtros from './components/Filtros/filtros'
+
 import Filtros from './components/Filtros'
+
 import { PacoteServico } from './components/ItensPasta/PacoteServicos'
 import styled from 'styled-components'
 import PaginaHome from './components/PaginaHome'
 import Header from './components/Header'
 import PaginaCadastro from './components/PaginaCadastro'
 import PaginaServicos from './components/PaginaServicos'
+
+import Footer from './footer'
+import PagFinal from './paginaFinal'
+
 import DetalhesServicos from './components/DetalhesServicos'
 import Footer from './footer'
+
 
 
 // export default class App extends React.Component {
@@ -194,6 +203,16 @@ export default class App extends React.Component {
 				{/* <button onClick={()=> this.mudaTela("TelaCarrinho")}>Carrinho de compras</button> */}
 				{this.escolheTela()}
 				</Home>
+
+				<button onClick={() => this.changePage("PaginaServicos")}>Servicos</button>
+				<button onClick={() => this.changePage("PaginaCadastro")}>Cadastro</button>
+				
+				
+			
+			{renderCurrentPage()}
+				<PagFinal></PagFinal>
+				<Footer></Footer>
+
 			{renderCurrentPage()}
 
 			<Footer></Footer>
