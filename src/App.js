@@ -14,6 +14,7 @@ import { GlobalStyle } from './Style/GlobalStyle'
 export default class App extends React.Component {
 	state = {
 		currentPage: "paginaHome",
+
 		detalhesServicosId: '',
 		jobs: []	
 	}
@@ -23,6 +24,29 @@ export default class App extends React.Component {
 		const novoCarrinho = [...this.state.jobs, job]
 		this.setState({jobs: novoCarrinho})
 		alert('O serviço foi adicionado ao carrinho.')
+
+		valorTotal: 550,
+		detalhesServicosId: '',
+		carrinho: [
+			{
+			id: 1,
+			nome: 'Serviço 1',
+			price: 123,
+			
+		},
+		{
+			id: 2,
+			nome: 'Serviço 2',
+			price: 321
+			
+		},
+		{
+			id: 3,
+			nome: 'Serviço 3',
+			price: 3321
+		}	
+		]	
+
 	}
 
 	removerItem = (id) => {
@@ -53,20 +77,28 @@ export default class App extends React.Component {
 			case "paginaHome":
 				return <PaginaHome changePage={this.changePage} />;
 			case "paginaServicos":
+
 				return <PaginaServicos
 				adicionarItem={this.adicionarItem} 
+
+				return <PaginaServicos 
+
 				changePage={this.changePage} 
 				paginaDetalhes={this.paginaDetalhes}
 				/>;
 			case "paginaCadastro":
 				return <PaginaCadastro changePage={this.changePage} />;
 			case "paginaCarrinho":
+
 				return <TelaCarrinho 
 				jobs={this.state.jobs}
 				changePage={this.changePage}
 				removerItem={this.removerItem}
 				limparCarrinho={this.limparCarrinho}
 				/>
+
+				return <TelaCarrinho changePage={this.changePage}/>
+
 			case "paginaDetalhes":
 				return <DetalhesServicos 
 				changePage={this.changePage} 

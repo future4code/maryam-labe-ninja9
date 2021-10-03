@@ -66,17 +66,6 @@ export default class PaginaServicos extends React.Component {
 
 	render() {
 
-		// const renderCurrentPage = () => {
-		// 	if (this.state.currentPage === 'paginaServicos') {
-		// 		return <PaginaServicos 
-		// 		changePage={this.currentPage}/>
-		// 	} else if (this.state.currentPage === 'paginaDetalhes')
-		// 		return <DetalhesServicos
-		// 		changePage={this.currentPage} 
-		// 		/>
-		// }
-
-
 		const servicos = this.state.jobs
 		.filter((job) => {
 			return job.title.toLowerCase().includes(this.state.query.toLowerCase()) ||
@@ -107,7 +96,9 @@ export default class PaginaServicos extends React.Component {
 					preco={servico.price}
 					prazo={servico.dueDate}
 					paginaDetalhes={this.props.paginaDetalhes}
+
 					adicionarItem={this.props.adicionarItem} 
+
 				/>
 		})
 		return (
