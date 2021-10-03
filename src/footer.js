@@ -24,20 +24,20 @@ export default class Footer extends React.Component {
 		return (
 
 
-            <FooterClass>
-            <h3>
-               Somos uma plataforma online para conectar clientes a prestadores de serviços por todo país.
-            </h3>
+//             <FooterClass>
+//             <h3>
+//                Somos uma plataforma online para conectar clientes a prestadores de serviços por todo país.
+//             </h3>
 
 
-            <h3> Labeninjas Copyright© </h3>
-            <h3> - Desenvolvido por: <br/> Enzo Emiliano, Élida Nunes, Júlia Cortez, Mariana Trevisane e Rafael Flores -  </h3>
+//             <h3> Labeninjas Copyright© </h3>
+//             <h3> - Desenvolvido por: <br/> Enzo Emiliano, Élida Nunes, Júlia Cortez, Mariana Trevisane e Rafael Flores -  </h3>
 
-        </FooterClass>
+//         </FooterClass>
 
-		)
-	}
-}
+// 		)
+// 	}
+// }
 
             
             <FooterClass>
