@@ -2,7 +2,7 @@ import React from 'react'
 import carrinho from '../img/shopping-cart.png'
 import styled from 'styled-components';
 import BotoesDeNavegacao from './botoesDeNavegacao';
-import Logo from '../img/labeninjas3.png'
+import Logo from '../img/logo-semfundo.png'
 import TelaHome from './paginaHome'
 
 
@@ -13,6 +13,7 @@ const Div = styled.div`
 `;
 const BarraHeader = styled.div`
     max-width: 1010px;
+    max-height: 30px;
     padding: 26px 20px;
     width: 100%;
     display: flex;
@@ -22,6 +23,11 @@ const BarraHeader = styled.div`
 const BarraEsquerda = styled.div`
     width: 33.333%;
     text-align: left;
+    img {
+        width: 20vw;
+        cursor: pointer;
+    }
+    
 `;
 const BarraCentro = styled.div`
     width: 33.333%;
@@ -49,7 +55,7 @@ export default class Header extends React.Component {
         <Div>
         <BarraHeader>
             <BarraEsquerda>
-            <button  onClick={() => this.props.changePage("paginaHome")}> <img src = {Logo} ></img></button>
+            <img src = {Logo} onClick={() => this.props.changePage("paginaHome")}></img>
             </BarraEsquerda>
             <BarraCentro>  
             <button onClick={() => this.props.changePage("paginaServicos")}>Servicos</button>
