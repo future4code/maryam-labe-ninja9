@@ -81,7 +81,7 @@ export default class App extends React.Component {
 				servicoId={this.state.detalhesServicosId}
 				/>
 			default:
-			return <DetalhesServicos />;
+			return <PaginaHome />;
 		}
 };
 
