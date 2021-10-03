@@ -4,8 +4,7 @@ import styled from 'styled-components';
 import BotoesDeNavegacao from './botoesDeNavegacao';
 import Logo from '../img/logo-semfundo.png'
 import TelaHome from './paginaHome'
-
-
+import { GlobalStyle } from '../Style/GlobalStyle';
 
 const Div = styled.div`
     background-color: #fff;
@@ -15,8 +14,12 @@ const BarraHeader = styled.div`
     max-width: 1010px;
     max-height: 30px;
     padding: 26px 20px;
+    background-color: white;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.0975);
     width: 100%;
     display: flex;
+    height: 70px;
+    justify-content: space-between;
     align-items: center;
     margin: 0 auto;
 `;
@@ -27,47 +30,48 @@ const BarraEsquerda = styled.div`
         width: 20vw;
         cursor: pointer;
     }
-    
 `;
-const BarraCentro = styled.div`
-    width: 33.333%;
-    text-align: center;
-`;
+// const BarraCentro = styled.div`
+//     width: 33.333%;
+//     text-align: center;
+// `
 
-const BarraDireita = styled.div`
-    width: 33.333%;
-    text-align: right;
-    svg {
-    margin-right: 20px;
-    }
-`;
+const ButtonNav = styled.button`
+    display: block;
+	width: 150px;
+    background-color: #7C65AC;
+    color: white;
+    border-radius: 3px;
+`
+
+const ContainerNav = styled.div`
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 350px;
+`
 
 const CartHeader = styled.img`
     width: 40px;
-`
-
+    `
 
 export default class Header extends React.Component {
 
     render(){
 
     return (
-        <Div>
-        <BarraHeader>
-            <BarraEsquerda>
-            <img src = {Logo} onClick={() => this.props.changePage("paginaHome")}></img>
-            </BarraEsquerda>
-            <BarraCentro>  
-            <button onClick={() => this.props.changePage("paginaServicos")}>Servicos</button>
-            <button onClick={() => this.props.changePage("paginaCadastro")}>Cadastro</button>
-            </BarraCentro>
-            <BarraDireita>
-
-            <CartHeader onClick={() => this.props.changePage("paginaCarrinho")} src = {carrinho} />                    
-
-            </BarraDireita>
-        </BarraHeader>
-        </Div>
+            <Div>
+                <BarraHeader>
+                    <BarraEsquerda>
+                        <img src = {Logo} onClick={() => this.props.changePage("paginaHome")}></img>
+                    </BarraEsquerda>
+                    <ContainerNav>
+                        <ButtonNav onClick={() => this.props.changePage("paginaServicos")}>Contratar um Ninja</ButtonNav>
+                        <ButtonNav onClick={() => this.props.changePage("paginaCadastro")}>Quero ser um Ninja</ButtonNav>
+                    </ContainerNav>
+                    <CartHeader onClick={() => this.props.changePage("paginaCarrinho")} src = {carrinho} />
+                </BarraHeader>
+            </Div>
     );
     }
 };
