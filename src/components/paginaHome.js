@@ -1,39 +1,88 @@
 import React from 'react'
 import styled from 'styled-components'
-import imagemHome from '../img/imagemHome.jpg'
+import imagemHome from '../img/yingchou-han-IJrIeCs3D4g-unsplash (1) (1).png'
+import { GlobalStyle } from '../Style/GlobalStyle';
 import BotoesDeNav from './botoesDeNavegacao';
 
 
 
 const Home = styled.div`
     max-width: 1010px;
-    padding: 5px 15px;
     width: 100%;
     display: flex;
     align-items: center;
-    margin: 0 auto;
+    margin: 0;
     color: black;
 `;
 
-const Texto = styled.div`
+const BlocoTexto = styled.div`
 display: block
-
 `
 
 
+const ContainerTexto = styled.div`
+	position: absolute;
+	top: 180px;
+	width: 350px;
+	margin-left: 250px;
+	height: 30px;
+`
+
+const Titulo = styled.p`
+	font-family: Helvetica;
+	font-size: 40px;
+	font-weight: 750;
+	margin-bottom: -10px;
+	color: #7C65AC;
+	line-height: 40px;
+`
+
+const Texto = styled.p`
+	font-family: Helvetica;
+	font-size: 16px;
+	line-height: 20px;
+`
+
+const ImagemHome = styled.img`
+	width: 1345px;
+`
+
+const ButtonNav = styled.button`
+    display: block;
+	width: 150px;
+    background-color: #7C65AC;
+    color: white;
+    border-radius: 3px;
+`
+
+const ContainerNav = styled.div`
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 350px;
+`
+
 export function PaginaHome (props){
 		return (
-			<div>
+			<GlobalStyle>
 				<Home>
-					<Texto>
-						<h3> Preciso de alguém pra fazer um trabalho pra mim!</h3>
-						<button onClick={() => props.changePage("paginaServicos")}>Servicos</button>
-						<h3> Tenho uma habilidade especial e gostaria de oferecer meus serviços!</h3>
-						<button onClick={() => props.changePage("paginaCadastro")}>Cadastro</button>
-					</Texto>
-                <img src = {imagemHome}/>
+					<BlocoTexto>
+						<ContainerTexto>
+							<Titulo> O talento certo, no momento certo</Titulo>
+								<Texto>Somos uma plataforma online para conectar clientes
+								a prestadores de serviços por todo país. 
+							</Texto>
+							
+								<ContainerNav>
+								<ButtonNav onClick={() => props.changePage("paginaCadastro")}>Quero ser um Ninja</ButtonNav>
+								<ButtonNav onClick={() => props.changePage("paginaServicos")}>Contratar um Ninja</ButtonNav>
+								</ContainerNav>
+						
+						</ContainerTexto>
+					</BlocoTexto>
+                <ImagemHome src = {imagemHome}/>
 				</Home>
-            </div>
+            </GlobalStyle>
 		)
 	}
 
