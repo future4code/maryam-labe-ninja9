@@ -15,26 +15,26 @@ export default class TelaCarrinho extends React.Component {
 	render(){
 		const ItensDoCarrinho = this.props.carrinho && this.props.carrinho.map(item => {
 			return <Itens 
-			  quantidade={item.quantidade}
-			  nome={item.nome}
-			  onClick={() => console.log("adicionar serviço")}
-			  onClick={() => this.props.removerItem(item)}			  
+				quantidade={item.quantidade}
+				nome={item.title}
+				id={item.id}
+				onClick={() => console.log("adicionar serviço")}
+				onClick={() => this.props.removerItem(item)}
+				removerItem={this.props.removerItem}
 			/>
 		})
 		return (
 			<ConjuntoDoCarrinho>
 				<h2>carrinho:</h2>
 				<div> {ItensDoCarrinho} </div>			 	
-			  <p> Valor Total: R$ {this.props.valorTotal},00 </p>
-			  
-			  <button> Adicionar + serviços </button>
+				<p> Valor Total: R$ {this.props.valorTotal},00 </p>
+			
+				<button onClick={() => this.props.changePage("paginaServicos")}> Adicionar + serviços </button>
 			<hr/>
-			<button> Voltar para lista de serviços </button>
+			<button onClick={() => this.props.changePage("paginaServicos")}> Voltar para lista de serviços </button>
 			<hr/>
-			<button> Finalizar Compras </button>
+			<button onClick={() => this.props.limparCarrinho()}> Finalizar Compras </button>
             </ConjuntoDoCarrinho>
-
-		
 		)
 	}
 }

@@ -80,7 +80,7 @@ const CardServicos = (props) => {
             <ContainerDetailsCart>
                 <ButtonDetails onClick={() => props.paginaDetalhes(props.id, "paginaDetalhes")}>Ver detalhes
                 </ButtonDetails>
-                <ButtonCart onClick={() => props.adicionarItem(props.item)} src = {carrinho} /> 
+                <ButtonCart onClick={() => props.adicionarItem(props.servico)} src = {carrinho} /> 
             </ContainerDetailsCart>
             
             </ContainerCards>

@@ -23,7 +23,6 @@ export default class Footer extends React.Component {
 	render(){
 		return (
 
-
             <FooterClass>
             <Chamadas> LabeNinjas Copyright©2021 <br />Labenu - Turma Maryam</Chamadas>
             <Chamadas> Desenvolvido por: <br/> Enzo Emiliano, Élida Nunes, 

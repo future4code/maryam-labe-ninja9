@@ -19,34 +19,9 @@ export default class App extends React.Component {
 		carrinho: []	
 	}
 
-	// valorTotal: 550,
-	// 	detalhesServicosId: '',
-	// 	carrinho: [
-	// 		{
-	// 		id: 1,
-	// 		nome: 'Serviço 1',
-	// 		price: 123,
-			
-	// 	},
-	// 	{
-	// 		id: 2,
-	// 		nome: 'Serviço 2',
-	// 		price: 321
-			
-	// 	},
-	// 	{
-	// 		id: 3,
-	// 		nome: 'Serviço 3',
-	// 		price: 3321
-	// 	}	
-	// 	]	
-
-	// }
-
-
 	adicionarItem = (job) => {
-		const novoCarrinho = [...this.state.jobs, job]
-		this.setState({jobs: novoCarrinho})
+		const novoCarrinho = [...this.state.carrinho, job]
+		this.setState({carrinho: novoCarrinho})
 		alert('O serviço foi adicionado ao carrinho.')
 	}
 
@@ -82,12 +57,13 @@ export default class App extends React.Component {
 				adicionarItem={this.adicionarItem} 
 				changePage={this.changePage} 
 				paginaDetalhes={this.paginaDetalhes}
+				carrinho={this.state.carrinho}
 				/>;
 			case "paginaCadastro":
 				return <PaginaCadastro changePage={this.changePage} />;
 			case "paginaCarrinho":
 				return <TelaCarrinho 
-				jobs={this.state.jobs}
+				carrinho={this.state.carrinho}
 				changePage={this.changePage}
 				removerItem={this.removerItem}
 				limparCarrinho={this.limparCarrinho}

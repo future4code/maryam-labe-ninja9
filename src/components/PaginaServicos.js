@@ -91,14 +91,14 @@ export default class PaginaServicos extends React.Component {
 			return <CardServicos
 					key={servico.id}
 					id={servico.id}
+					servico={servico}
 					titulo={servico.title}
 					descricao={servico.description}
 					preco={servico.price}
 					prazo={servico.dueDate}
 					paginaDetalhes={this.props.paginaDetalhes}
-
+					carrinho={this.props.carrinho}
 					adicionarItem={this.props.adicionarItem} 
-
 				/>
 		})
 		return (

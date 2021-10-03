@@ -5,7 +5,7 @@ import styled from 'styled-components'
 const ConjuntoDeItens = styled.div`
 
 display: flex;
-alin-items: center;
+align-items: center;
 justify-content: space-between;
 `
 
@@ -20,7 +20,7 @@ export default class Itens extends React.Component {
 			
 			<div>{this.props.quantidade}x </div>
 			<p>{this.props.nome}</p>
-			<button onClick = {this.props.onClick} >Remover</button>
+			<button onClick = {() => this.props.removerItem(this.props.id)} >Remover</button>
 					
 		</ConjuntoDeItens>
 		
