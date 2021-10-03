@@ -37,14 +37,8 @@ export default class PaginaServicos extends React.Component {
 		.then((res) => {
 			this.setState({jobs: res.data.jobs})
 		}).catch((err) => {
-			console.log(err)
 		})
 	}
-
-	// currentPage = (currentPage, jobId) => {
-	// 	this.setState({currentPage: currentPage,
-	// 	jobId: jobId})
-	// }
 
 	updateQuery = (ev) => {
 		this.setState({query: ev.target.value})
@@ -113,6 +107,7 @@ export default class PaginaServicos extends React.Component {
 					preco={servico.price}
 					prazo={servico.dueDate}
 					paginaDetalhes={this.props.paginaDetalhes}
+					adicionarItem={this.props.adicionarItem} 
 				/>
 		})
 		return (

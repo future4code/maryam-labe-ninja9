@@ -5,53 +5,39 @@ import PaginaHome from './components/paginaHome'
 import Header from './components/Header'
 import PaginaCadastro from './components/PaginaCadastro'
 import PaginaServicos from './components/PaginaServicos'
-import PagFinal from './paginaFinal'
+import axios from 'axios'
+import { BASE_URL, headers } from './constantes/urls'
 import DetalhesServicos from './components/DetalhesServicos'
 import Footer from './footer'
-
-
-// const Home = styled.div`
-//     padding: 5px 15px;
-//     width: 100%;
-//     display: flex;
-//     align-items: center;
-//     margin: 0 auto;
-//     color: black;
-// `;
-
+import { GlobalStyle } from './Style/GlobalStyle'
 
 export default class App extends React.Component {
 	state = {
 		currentPage: "paginaHome",
-		valorTotal: 550,
 		detalhesServicosId: '',
-		carrinho: [
-			{
-			id: 1,
-			nome: 'Serviço 1',
-			price: 123,
-			
-		},
-		{
-			id: 2,
-			nome: 'Serviço 2',
-			price: 321
-			
-		},
-		{
-			id: 3,
-			nome: 'Serviço 3',
-			price: 3321
-		}	
-		]	
+		jobs: []	
 	}
 
-	adicionarItem = (item) => {
-		console.log(item)
+
+	adicionarItem = (job) => {
+		const novoCarrinho = [...this.state.jobs, job]
+		this.setState({jobs: novoCarrinho})
+		alert('O serviço foi adicionado ao carrinho.')
 	}
 
-	removerItem = (item) => {
-		console.log("serviço" , item)
+	removerItem = (id) => {
+		const podeDeletar = window.confirm("Tem certeza que deseja remover este produto?")
+		if (podeDeletar){
+			const novoCarrinho = this.state.carrinho.filter((itemCarrinho) => {
+				return itemCarrinho.id !== id
+			})
+			this.setState({carrinho: novoCarrinho})
+		}
+	}
+
+	limparCarrinho = () => {
+		this.setState({carrinho: []})
+		alert('Obrigado por comprar com a gente! :)')
 	}
 
 	paginaDetalhes = (servicoId) => {
@@ -67,14 +53,20 @@ export default class App extends React.Component {
 			case "paginaHome":
 				return <PaginaHome changePage={this.changePage} />;
 			case "paginaServicos":
-				return <PaginaServicos 
+				return <PaginaServicos
+				adicionarItem={this.adicionarItem} 
 				changePage={this.changePage} 
 				paginaDetalhes={this.paginaDetalhes}
 				/>;
 			case "paginaCadastro":
 				return <PaginaCadastro changePage={this.changePage} />;
 			case "paginaCarrinho":
-				return <TelaCarrinho changePage={this.changePage}/>
+				return <TelaCarrinho 
+				jobs={this.state.jobs}
+				changePage={this.changePage}
+				removerItem={this.removerItem}
+				limparCarrinho={this.limparCarrinho}
+				/>
 			case "paginaDetalhes":
 				return <DetalhesServicos 
 				changePage={this.changePage} 
@@ -85,23 +77,18 @@ export default class App extends React.Component {
 		}
 };
 
-<<<<<<< HEAD
-
-
-=======
->>>>>>> de2d7117253eae10ebb3ef6d6135d3bb73a65efa
 	render() {
-	console.log(this.state.servicosId)
+
 
 		return (
-			<div>
+			<GlobalStyle>
 				<Header 
 				changePage={this.changePage}
 				/>
 				{this.condicionalPaginas()}
 				<Footer/>
 
-			</div>
+			</GlobalStyle>
 		)
 	}
 }

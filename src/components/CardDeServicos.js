@@ -77,11 +77,10 @@ const CardServicos = (props) => {
                 <PrecoCards>R${props.preco}</PrecoCards>
                 <DueDateCards>{dataFormatada}</DueDateCards>
             </ContainerPriceDate>
-            {props.id}
             <ContainerDetailsCart>
                 <ButtonDetails onClick={() => props.paginaDetalhes(props.id, "paginaDetalhes")}>Ver detalhes
                 </ButtonDetails>
-                <ButtonCart onClick={() => props.changePage("paginaCarrinho")} src = {carrinho} /> 
+                <ButtonCart onClick={() => props.adicionarItem(props.item)} src = {carrinho} /> 
             </ContainerDetailsCart>
             
             </ContainerCards>

@@ -1,22 +1,22 @@
-
 import React from 'react'
 import styled from 'styled-components'
 
 
 const FooterClass = styled.div`
-
-
-display: flex;
-alin-items: center;
-justify-content: space-between;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #7C65AC
 `
 
-
-const TextFooter = styled.text`
-    font-size: 15px;
+const Chamadas = styled.h3`
+	font-family: Helvetica;
+    font-size: 14px;
+    color: white;
+    padding: 14px;
+    text-align: center;
+    line-height: 20px;
 `
-
-
 
 export default class Footer extends React.Component {
 
@@ -25,14 +25,9 @@ export default class Footer extends React.Component {
 
 
             <FooterClass>
-            <h3>
-               Somos uma plataforma online para conectar clientes a prestadores de serviços por todo país.
-            </h3>
-
-
-            <h3> Labeninjas Copyright© </h3>
-            <h3> - Desenvolvido por: <br/> Enzo Emiliano, Élida Nunes, Júlia Cortez, Mariana Trevisane e Rafael Flores -  </h3>
-
+            <Chamadas> LabeNinjas Copyright©2021 <br />Labenu - Turma Maryam</Chamadas>
+            <Chamadas> Desenvolvido por: <br/> Enzo Emiliano, Élida Nunes, 
+            Julia Cortez, Mariana Trevisane e Rafael Flores </Chamadas>
         </FooterClass>
 
 		)
