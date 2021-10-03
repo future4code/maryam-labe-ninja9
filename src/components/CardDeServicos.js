@@ -79,7 +79,7 @@ const CardServicos = (props) => {
             </ContainerPriceDate>
             {props.id}
             <ContainerDetailsCart>
-                <ButtonDetails onClick={() => props.changePage("paginaDetalhes", props.servicosId)}>Ver detalhes
+                <ButtonDetails onClick={() => props.paginaDetalhes(props.id, "paginaDetalhes")}>Ver detalhes
                 </ButtonDetails>
                 <ButtonCart onClick={() => props.changePage("paginaCarrinho")} src = {carrinho} /> 
             </ContainerDetailsCart>
