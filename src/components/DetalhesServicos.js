@@ -12,7 +12,7 @@ export default class DetalhesServicos extends React.Component {
     }
 
     getJob = (id) => {
-        Axios.get(`${BASE_URL}/jobs/${this.state.servico.id}`, headers)
+        Axios.get(`${BASE_URL}/jobs/${this.props.servicoId}`, headers)
         .then((res) => {
             this.setState({servico: res.data})
         })
@@ -37,7 +37,7 @@ export default class DetalhesServicos extends React.Component {
                 <ul>Formas de pagamento:
                     {pagamentos}
                 </ul>
-                <button onClick={()=> this.props.changePage("PaginaServicos, ''")}>Voltar para Lista</button>
+                <button onClick={()=> this.props.changePage("paginaServicos")}>Voltar para Lista</button>
                 {/* <button onClick={()=> this.mudaTela("DetalhesServicos")}>Jobs detalhes</button> */}
             </div>
         )
