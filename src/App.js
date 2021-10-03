@@ -1,14 +1,11 @@
 import React from 'react'
 import TelaCarrinho from './components/ItensPasta/CarrinhoDeCompras'
-import styled from 'styled-components'
 import PaginaHome from './components/paginaHome'
 import Header from './components/Header'
 import PaginaCadastro from './components/PaginaCadastro'
 import PaginaServicos from './components/PaginaServicos'
-import axios from 'axios'
-import { BASE_URL, headers } from './constantes/urls'
 import DetalhesServicos from './components/DetalhesServicos'
-import Footer from './footer'
+import Footer from './components/footer'
 import { GlobalStyle } from './Style/GlobalStyle'
 
 export default class App extends React.Component {

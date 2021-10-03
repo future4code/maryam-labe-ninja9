@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 
-
 const FooterClass = styled.div`
     display: flex;
     align-items: center;
@@ -22,13 +21,11 @@ export default class Footer extends React.Component {
 
 	render(){
 		return (
-
             <FooterClass>
             <Chamadas> LabeNinjas Copyright©2021 <br />Labenu - Turma Maryam</Chamadas>
             <Chamadas> Desenvolvido por: <br/> Enzo Emiliano, Élida Nunes, 
             Julia Cortez, Mariana Trevisane e Rafael Flores </Chamadas>
         </FooterClass>
-
 		)
 	}
 }

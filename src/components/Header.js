@@ -1,10 +1,7 @@
 import React from 'react'
 import carrinho from '../img/shopping-cart.png'
 import styled from 'styled-components';
-import BotoesDeNavegacao from './botoesDeNavegacao';
 import Logo from '../img/logo-semfundo.png'
-import TelaHome from './paginaHome'
-import { GlobalStyle } from '../Style/GlobalStyle';
 
 const Div = styled.div`
     background-color: #fff;
@@ -31,10 +28,6 @@ const BarraEsquerda = styled.div`
         cursor: pointer;
     }
 `;
-// const BarraCentro = styled.div`
-//     width: 33.333%;
-//     text-align: center;
-// `
 
 const ButtonNav = styled.button`
     display: block;

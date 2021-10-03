@@ -3,7 +3,6 @@ import React from "react"
 import { BASE_URL, headers } from "../constantes/urls"
 import styled from 'styled-components'
 
-
 const ContainerDetalhes = styled.div`
     display: flex;
     flex-direction: column;
@@ -65,7 +64,6 @@ export default class DetalhesServicos extends React.Component {
                     {pagamentos}
                 </ul>
                 <button onClick={()=> this.props.changePage("paginaServicos")}>Voltar para Lista</button>
-                {/* <button onClick={()=> this.mudaTela("DetalhesServicos")}>Jobs detalhes</button> */}
                 </TextosDetalhes>
             </ContainerDetalhes>
         )

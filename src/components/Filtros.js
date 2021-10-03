@@ -9,7 +9,6 @@ const FilterContainer = styled.div`
 	margin: 10px;
 `
 
-
 export function Filtros (props){
         return (
             <FilterContainer>

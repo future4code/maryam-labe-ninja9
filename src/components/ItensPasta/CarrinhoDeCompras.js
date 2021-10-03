@@ -2,7 +2,6 @@ import React from 'react'
 import styled from 'styled-components'
 import Itens from './ItensCarrinho'
 
-
 const ConjuntoDoCarrinho = styled.div`
 border: 3px solid black;
 display: flex;
@@ -30,10 +29,10 @@ export default class TelaCarrinho extends React.Component {
 				<p> Valor Total: R$ {this.props.valorTotal},00 </p>
 			
 				<button onClick={() => this.props.changePage("paginaServicos")}> Adicionar + serviços </button>
-			<hr/>
-			<button onClick={() => this.props.changePage("paginaServicos")}> Voltar para lista de serviços </button>
-			<hr/>
-			<button onClick={() => this.props.limparCarrinho()}> Finalizar Compras </button>
+				<hr/>
+				<button onClick={() => this.props.changePage("paginaServicos")}> Voltar para lista de serviços </button>
+				<hr/>
+				<button onClick={() => this.props.limparCarrinho()}> Finalizar Compras </button>
             </ConjuntoDoCarrinho>
 		)
 	}

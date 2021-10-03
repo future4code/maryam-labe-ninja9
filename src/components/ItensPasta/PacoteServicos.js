@@ -21,9 +21,4 @@ export const PacoteServico = [
     price: 3333
     
 }
-
 ]
-
-
-
- 

@@ -4,14 +4,13 @@ import axios from 'axios'
 import CardServicos from './CardDeServicos'
 import Filtros from './Filtros'
 import styled from 'styled-components'
-import DetalhesServicos from './DetalhesServicos'
 
 const ContainerServicos = styled.div`
 	display: grid;
 	width: 100%;
 	grid-template-columns: 1fr 1fr 1fr 1fr;
-	align-itens: center;
-	columns-gap: 10px;
+	align-items: center;
+	column-gap: 10px;
 	row-gap: 10px;
 `
 

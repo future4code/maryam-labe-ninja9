@@ -2,9 +2,6 @@ import React from 'react'
 import styled from 'styled-components'
 import imagemHome from '../img/yingchou-han-IJrIeCs3D4g-unsplash (1) (1).png'
 import { GlobalStyle } from '../Style/GlobalStyle';
-import BotoesDeNav from './botoesDeNavegacao';
-
-
 
 const Home = styled.div`
     max-width: 1010px;
@@ -18,7 +15,6 @@ const Home = styled.div`
 const BlocoTexto = styled.div`
 display: block
 `
-
 
 const ContainerTexto = styled.div`
 	position: absolute;
