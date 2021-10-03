@@ -5,7 +5,7 @@ const FooterClass = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-around;
-    background-color: #7C65AC
+    background-color: #7C65AC;
 `
 
 const Chamadas = styled.h3`

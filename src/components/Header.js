@@ -29,12 +29,24 @@ const BarraEsquerda = styled.div`
     }
 `;
 
-const ButtonNav = styled.button`
+export const ButtonNav = styled.button`
     display: block;
 	width: 150px;
+    height: 40px;
     background-color: #7C65AC;
     color: white;
     border-radius: 3px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+
+    :hover{
+        background-color: #6C5896;
+    }
+
+    :active{
+        transform: scale(0.8)
+    }
 `
 
 const ContainerNav = styled.div`
@@ -46,6 +58,12 @@ const ContainerNav = styled.div`
 
 const CartHeader = styled.img`
     width: 40px;
+    border: none;
+    cursor: pointer;
+
+    :hover{
+        transform: scale(1.2)
+    }
     `
 
 export default class Header extends React.Component {

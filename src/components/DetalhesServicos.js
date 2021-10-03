@@ -2,6 +2,7 @@ import Axios from "axios"
 import React from "react"
 import { BASE_URL, headers } from "../constantes/urls"
 import styled from 'styled-components'
+import { ButtonNav } from "./Header"
 
 const ContainerDetalhes = styled.div`
     display: flex;
@@ -10,6 +11,7 @@ const ContainerDetalhes = styled.div`
     border-radius: 10px;
     width: 550px;
     padding: 14px;
+    margin-bottom: 8px;
 `
 const TextosDetalhes = styled.div`
     font-family: Helvetica;
@@ -63,7 +65,7 @@ export default class DetalhesServicos extends React.Component {
                 <ul>Formas de pagamento:
                     {pagamentos}
                 </ul>
-                <button onClick={()=> this.props.changePage("paginaServicos")}>Voltar para Lista</button>
+                <ButtonNav onClick={()=> this.props.changePage("paginaServicos")}>Voltar para Lista</ButtonNav>
                 </TextosDetalhes>
             </ContainerDetalhes>
         )

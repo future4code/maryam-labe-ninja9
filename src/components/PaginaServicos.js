@@ -5,8 +5,10 @@ import CardServicos from './CardDeServicos'
 import Filtros from './Filtros'
 import styled from 'styled-components'
 
+
 const ContainerServicos = styled.div`
 	display: grid;
+	margin-bottom: 8px;
 	width: 100%;
 	grid-template-columns: 1fr 1fr 1fr 1fr;
 	align-items: center;

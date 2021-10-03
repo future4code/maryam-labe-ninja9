@@ -12,6 +12,10 @@ const ContainerCards = styled.div`
     font-family: Helvetica;
     margin-top: 16px;
     line-height: 25px;
+
+    :hover{
+        transform: scale(1.1)
+    }
 `
 
 const TituloCards = styled.text`
@@ -35,16 +39,33 @@ const LineName = styled.hr`
 `
 
 const ButtonDetails = styled.button`
-    width: 100px;
+    width: 180px;
     display: block;
     height: 25px;
     background-color: #7C65AC;
     color: white;
     border-radius: 3px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+
+    :hover{
+        background-color: #6C5896;
+    }
+
+    :active{
+        transform: scale(0.8)
+    }
 `
 const ButtonCart = styled.img`
-    width: 25px;
+    width: 30px;
     display: block;
+    border: none;
+    cursor: pointer;
+
+    :hover{
+        transform: scale(1.2)
+    }
 `
 
 const ContainerDetailsCart = styled.div`
