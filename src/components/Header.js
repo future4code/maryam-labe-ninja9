@@ -2,11 +2,18 @@ import React from 'react'
 import carrinho from '../img/shopping-cart.png'
 import styled from 'styled-components';
 import BotoesDeNavegacao from './botoesDeNavegacao';
-import Logo from '../img/labeninjas3.png'
+import Logo from '../img/logo-semfundo.png'
 import TelaHome from './paginaHome'
 import { GlobalStyle } from '../Style/GlobalStyle';
 
 const Div = styled.div`
+    background-color: #fff;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.0975);
+`;
+const BarraHeader = styled.div`
+    max-width: 1010px;
+    max-height: 30px;
+    padding: 26px 20px;
     background-color: white;
     border-bottom: 2px solid rgba(0, 0, 0, 0.0975);
     width: 100%;
@@ -14,7 +21,21 @@ const Div = styled.div`
     height: 70px;
     justify-content: space-between;
     align-items: center;
-`
+    margin: 0 auto;
+`;
+const BarraEsquerda = styled.div`
+    width: 33.333%;
+    text-align: left;
+    img {
+        width: 20vw;
+        cursor: pointer;
+    }
+`;
+// const BarraCentro = styled.div`
+//     width: 33.333%;
+//     text-align: center;
+// `
+
 const ButtonNav = styled.button`
     display: block;
 	width: 150px;
@@ -39,15 +60,17 @@ export default class Header extends React.Component {
     render(){
 
     return (
-
             <Div>
-                    <button  onClick={() => this.props.changePage("paginaHome")}> <img src = {Logo} ></img></button>
+                <BarraHeader>
+                    <BarraEsquerda>
+                        <img src = {Logo} onClick={() => this.props.changePage("paginaHome")}></img>
+                    </BarraEsquerda>
                     <ContainerNav>
                         <ButtonNav onClick={() => this.props.changePage("paginaServicos")}>Contratar um Ninja</ButtonNav>
                         <ButtonNav onClick={() => this.props.changePage("paginaCadastro")}>Quero ser um Ninja</ButtonNav>
                     </ContainerNav>
                     <CartHeader onClick={() => this.props.changePage("paginaCarrinho")} src = {carrinho} />
-
+                </BarraHeader>
             </Div>
     );
     }
