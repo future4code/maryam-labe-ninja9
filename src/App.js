@@ -76,13 +76,11 @@ export default class App extends React.Component {
 				return <DetalhesServicos 
 				changePage={this.changePage} />
 			default:
-			return <DetalhesServicos />;
+			return <PaginaHome />;
 		}
 };
 
-	paginaDetalhes = (servicoId) => {
-		this.setState({detalhesServicosId: servicoId, currentPage: "paginaDetalhes"})
-	}
+
 
 	render() {
 	console.log(this.state.servicosId)
