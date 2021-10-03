@@ -4,7 +4,7 @@ import imagemHome from '../img/yingchou-han-IJrIeCs3D4g-unsplash (1) (1).png'
 import { GlobalStyle } from '../Style/GlobalStyle';
 
 const Home = styled.div`
-    max-width: 1010px;
+    max-width: 100vw;
     width: 100%;
     display: flex;
     align-items: center;
@@ -44,11 +44,23 @@ const ImagemHome = styled.img`
 `
 
 const ButtonNav = styled.button`
-    display: block;
+	display: block;
 	width: 150px;
+    height: 40px;
     background-color: #7C65AC;
     color: white;
     border-radius: 3px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+
+    :hover{
+        background-color: #6C5896;
+    }
+
+    :active{
+        transform: scale(0.8)
+    }
 `
 
 const ContainerNav = styled.div`
