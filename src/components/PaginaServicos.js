@@ -112,7 +112,7 @@ export default class PaginaServicos extends React.Component {
 					descricao={servico.description}
 					preco={servico.price}
 					prazo={servico.dueDate}
-					changePage={this.props.changePage}
+					paginaDetalhes={this.props.paginaDetalhes}
 				/>
 		})
 		return (

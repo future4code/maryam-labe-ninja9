@@ -24,7 +24,7 @@ export default class App extends React.Component {
 	state = {
 		currentPage: "paginaHome",
 		valorTotal: 550,
-		servicosId: '',
+		detalhesServicosId: '',
 		carrinho: [
 			{
 			id: 1,
@@ -54,11 +54,12 @@ export default class App extends React.Component {
 		console.log("serviço" , item)
 	}
 
-	changePage = (currentPage, servicosId) => {
-		this.setState({ 
-			currentPage: currentPage,
-			servicosId: servicosId
-		});
+	paginaDetalhes = (servicoId) => {
+		this.setState({detalhesServicosId: servicoId, currentPage: "paginaDetalhes"})
+	}
+
+	changePage = (currentPage) => {
+		this.setState({currentPage: currentPage});
 	}
 
 	condicionalPaginas = () => {
@@ -67,21 +68,28 @@ export default class App extends React.Component {
 				return <PaginaHome changePage={this.changePage} />;
 			case "paginaServicos":
 				return <PaginaServicos 
-				changePage={this.changePage} />;
+				changePage={this.changePage} 
+				paginaDetalhes={this.paginaDetalhes}
+				/>;
 			case "paginaCadastro":
 				return <PaginaCadastro changePage={this.changePage} />;
 			case "paginaCarrinho":
-				return <TelaCarrinho changePage={this.changePage} />
+				return <TelaCarrinho changePage={this.changePage}/>
 			case "paginaDetalhes":
 				return <DetalhesServicos 
-				changePage={this.changePage} />
+				changePage={this.changePage} 
+				servicoId={this.state.detalhesServicosId}
+				/>
 			default:
 			return <PaginaHome />;
 		}
 };
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> de2d7117253eae10ebb3ef6d6135d3bb73a65efa
 	render() {
 	console.log(this.state.servicosId)
 
