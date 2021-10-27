@@ -1,4 +1,4 @@
-# maryam-labe-ninja9
+# Maryam-labe-ninja9
 
 Projeto em grupo LabeNinjas
 
